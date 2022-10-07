@@ -16,4 +16,8 @@ export class LibraryComponent implements OnInit {
 
   memesFromLocal: any;
   memes!: IMeme[];
+
+  clearLocalStorage(): void {
+    this.localStore.clearData();
+  }
 }
