@@ -7,7 +7,9 @@ import { LocalService } from '../local.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private localStore: LocalService) {
+  constructor(private localStore: LocalService) {}
+
+  ngOnInit(): void {
     if (this.localStore.getData('memes') === null) {
       this.localStore.saveData(
         'memes',
@@ -20,9 +22,7 @@ export class HomeComponent implements OnInit {
         ])
       );
     }
-  }
 
-  ngOnInit(): void {
     this.memesFromLocal = this.localStore.getData('memes');
     this.memes = JSON.parse(this.memesFromLocal);
   }
