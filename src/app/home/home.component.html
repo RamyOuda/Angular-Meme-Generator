@@ -1,0 +1,50 @@
+<div class="header">
+  <h1>Meme Generator!</h1>
+</div>
+
+<div class="container form">
+  <div class="meme-input col-md-8">
+    <div class="form-group">
+      <label [ngClass]="{ danger: showAlert }">{{
+        showAlert ? "Please enter an image URL" : "Image URL"
+      }}</label>
+      <input
+        type="url"
+        class="form-control"
+        [(ngModel)]="url"
+        placeholder="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
+      />
+    </div>
+    <div class="form-group">
+      <label>Top Text</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="topText"
+        placeholder="Meow"
+      />
+    </div>
+    <div class="form-group">
+      <label>Bottom Text</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="bottomText"
+        placeholder="Meow!"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="addNewMeme()">
+      Submit
+    </button>
+    <button class="btn btn-secondary" (click)="clearInputs()">Clear</button>
+  </div>
+</div>
+
+<div class="container latest-meme" *ngIf="memes">
+  <div class="meme">
+    <img class="img-url" [src]="memes[0].url" />
+    <div class="top-text">{{ memes[0].topText }}</div>
+    <div class="bottom-text">{{ memes[0].bottomText }}</div>
+  </div>
+</div>

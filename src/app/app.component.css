@@ -1,0 +1,12 @@
+.navbar-brand,
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #dadada;
+}
