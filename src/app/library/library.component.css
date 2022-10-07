@@ -18,16 +18,14 @@
   bottom: 5px;
 }
 
-.latest-meme {
-  margin-top: 25px;
-  word-break: break-all;
-}
-
 .meme {
   height: 180px;
   width: 300px;
+
   margin: 20px;
+
   text-align: center;
+  word-break: break-all;
 
   display: flex;
   justify-content: center;
