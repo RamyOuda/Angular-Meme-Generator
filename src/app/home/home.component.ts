@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
         JSON.stringify([
           {
             url: 'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
-            topText: 'Meow',
+            topText: "Here's an example",
             bottomText: 'Meow!',
           },
         ])
