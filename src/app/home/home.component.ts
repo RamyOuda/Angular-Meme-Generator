@@ -1,33 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { IMeme } from '../imeme';
+import { IMeme } from '../meme/imeme';
 import { LocalService } from '../local.service';
+import { MemeService } from '../meme/meme.service';
 
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private localStore: LocalService) {}
+  constructor(
+    private localStore: LocalService,
+    private memeService: MemeService
+  ) {}
 
   ngOnInit(): void {
-    if (this.localStore.getData('memes') === null) {
-      this.localStore.saveData(
-        'memes',
-        JSON.stringify([
-          {
-            url: 'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
-            topText: "Here's an example",
-            bottomText: 'Meow!',
-          },
-        ])
-      );
-    }
-
-    this.memesFromLocal = this.localStore.getData('memes');
+    this.memeService.startWithDefaultData();
     this.memes = JSON.parse(this.memesFromLocal);
   }
 
-  memesFromLocal: any;
+  memesFromLocal: any = this.memeService.memeList;
   showAlert: boolean = false;
 
   private _url: string = '';

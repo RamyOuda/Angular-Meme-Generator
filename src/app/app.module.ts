@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LibraryModule } from './library/library.module';
+import { MemeComponent } from './meme/meme.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, MemeComponent],
   imports: [BrowserModule, FormsModule, LibraryModule, AppRoutingModule],
   bootstrap: [AppComponent],
 })

@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { IMeme } from '../imeme';
+import { IMeme } from '../meme/imeme';
 import { LocalService } from '../local.service';
+import { MemeService } from '../meme/meme.service';
 
 @Component({
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css'],
 })
 export class LibraryComponent implements OnInit {
-  constructor(private localStore: LocalService) {}
+  constructor(private memeService: MemeService) {}
 
   ngOnInit(): void {
-    this.memesFromLocal = this.localStore.getData('memes');
     this.memes = JSON.parse(this.memesFromLocal);
   }
 
-  memesFromLocal: any;
+  memesFromLocal: any = this.memeService.memeList;
   memes!: IMeme[];
 
   clearLocalStorage(): void {
-    this.localStore.removeData('memes');
+    this.memeService.restoreToDefault();
   }
 }
