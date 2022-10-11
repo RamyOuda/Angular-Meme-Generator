@@ -1,50 +1,68 @@
-<div class="header">
-  <h1>Meme Generator!</h1>
-</div>
+<div class="page-wrapper">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <h2>Meme Generator!</h2>
+    </div>
+    <div class="input-wrapper">
+      <div class="meme-input">
+        <div class="form-group">
+          <label [ngClass]="{ danger: showAlert }">{{
+            showAlert ? "Please enter an image URL" : "Image URL"
+          }}</label>
+          <input
+            type="url"
+            class="form-control"
+            [(ngModel)]="url"
+            placeholder="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
+          />
+        </div>
+        <div class="form-group">
+          <label>Top Text</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="topText"
+            placeholder="Here's an example"
+          />
+        </div>
+        <div class="form-group">
+          <label>Bottom Text</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="bottomText"
+            placeholder="Meow!"
+          />
+        </div>
 
-<div class="container form">
-  <div class="meme-input col-md-8">
-    <div class="form-group">
-      <label [ngClass]="{ danger: showAlert }">{{
-        showAlert ? "Please enter an image URL" : "Image URL"
-      }}</label>
-      <input
-        type="url"
-        class="form-control"
-        [(ngModel)]="url"
-        placeholder="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
-      />
+        <button type="submit" class="btn btn-primary" (click)="addNewMeme()">
+          Submit
+        </button>
+        <button class="btn btn-secondary" (click)="clearInputs()">Clear</button>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Top Text</label>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="topText"
-        placeholder="Here's an example"
-      />
-    </div>
-    <div class="form-group">
-      <label>Bottom Text</label>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="bottomText"
-        placeholder="Meow!"
-      />
-    </div>
-
-    <button type="submit" class="btn btn-primary" (click)="addNewMeme()">
-      Submit
-    </button>
-    <button class="btn btn-secondary" (click)="clearInputs()">Clear</button>
   </div>
-</div>
 
-<div class="container latest-meme" *ngIf="memes">
-  <div class="meme">
-    <img class="img-url" [src]="memes[0].url" />
-    <div class="top-text">{{ memes[0].topText }}</div>
-    <div class="bottom-text">{{ memes[0].bottomText }}</div>
+  <div class="meme-wrapper">
+    <div class="meme-header">
+      <h2>{{ url ? "Your Meme!" : "Latest Meme!" }}</h2>
+    </div>
+    <!-- If there is no input URL, show the most recent meme -->
+    <div class="latest-meme" *ngIf="!url">
+      <div class="meme">
+        <img class="img-url" [src]="memes[0].url" />
+        <div class="top-text">{{ memes[0].topText }}</div>
+        <div class="bottom-text">{{ memes[0].bottomText }}</div>
+      </div>
+    </div>
+    <!-- If there is an input URL, show the current meme -->
+    <div class="latest-meme" *ngIf="url">
+      <div class="meme">
+        <img class="img-url" [src]="url" />
+        <div class="top-text">{{ topText }}</div>
+        <div class="bottom-text">{{ bottomText }}</div>
+      </div>
+    </div>
+    <!--  -->
   </div>
 </div>

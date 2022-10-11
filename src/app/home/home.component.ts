@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     this.memes = JSON.parse(this.memesFromLocal);
   }
 
+  memes!: IMeme[];
   memesFromLocal: any = this.memeService.memeList;
   showAlert: boolean = false;
 
@@ -45,8 +46,6 @@ export class HomeComponent implements OnInit {
     this._bottomText = value;
   }
 
-  memes!: IMeme[];
-
   addNewMeme(): void {
     if (this.url) {
       this.showAlert = false;
@@ -57,6 +56,8 @@ export class HomeComponent implements OnInit {
       });
 
       this.localStore.saveData('memes', JSON.stringify(this.memes));
+
+      this.clearInputs();
     } else {
       this.showAlert = true;
     }

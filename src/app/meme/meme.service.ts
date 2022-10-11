@@ -6,6 +6,8 @@ import { IMeme } from './imeme';
   providedIn: 'root',
 })
 export class MemeService {
+  constructor(private localStore: LocalService) {}
+
   memeList = this.localStore.getData('memes');
 
   defaultMeme: IMeme = {
@@ -14,15 +16,13 @@ export class MemeService {
     bottomText: 'Meow!',
   };
 
-  constructor(private localStore: LocalService) {}
-
-  startWithDefaultData() {
+  startWithDefaultData(): void {
     if (this.localStore.getData('memes') === null) {
       this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
     }
   }
 
-  restoreToDefault() {
+  restoreToDefault(): void {
     this.localStore.removeData('memes');
   }
 }
