@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IMeme } from '../meme/imeme';
-import { LocalService } from '../local.service';
 import { MemeService } from '../meme/meme.service';
 
 @Component({
