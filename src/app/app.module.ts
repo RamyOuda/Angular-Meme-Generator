@@ -7,10 +7,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LibraryModule } from './library/library.module';
 import { MemeComponent } from './meme/meme.component';
+import { MemeModule } from './meme/meme.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MemeComponent],
-  imports: [BrowserModule, FormsModule, LibraryModule, AppRoutingModule],
+  declarations: [AppComponent, HomeComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    MemeModule,
+    LibraryModule,
+    AppRoutingModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -13,7 +13,7 @@
   flex-shrink: 0;
 }
 
-.WIP {
+.library-tag {
   position: absolute;
   top: 200px;
   left: 30px;
@@ -24,45 +24,7 @@
 }
 
 /* Meme CSS */
-.memes-wrapper {
+.memes-section {
   display: flex;
   flex-wrap: wrap;
-}
-
-.top-text,
-.bottom-text {
-  color: #ffffff;
-  font-size: 25px;
-  position: absolute;
-}
-
-.top-text {
-  top: 5px;
-}
-
-.bottom-text {
-  bottom: 5px;
-}
-
-.meme-wrap {
-  border-radius: 10px;
-  height: 180px;
-  width: 300px;
-  margin: 20px;
-  text-align: center;
-  word-break: break-all;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  box-shadow: 10px 10px 8px #808080;
-}
-
-.meme-wrap:hover {
-  cursor: pointer;
-}
-
-.img-url {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }

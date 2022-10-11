@@ -1,1 +1,7 @@
-<p>meme works!</p>
+<div class="meme" *ngFor="let meme of memes">
+  <div class="meme-wrap">
+    <img class="img-url" [src]="meme.url" />
+    <div class="top-text">{{ meme.topText }}</div>
+    <div class="bottom-text">{{ meme.bottomText }}</div>
+  </div>
+</div>

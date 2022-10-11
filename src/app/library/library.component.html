@@ -1,7 +1,7 @@
 <main>
   <div class="wrapper">
     <div class="side-bar">
-      <p class="WIP">&lt;Your Library&gt;</p>
+      <p class="library-tag">&lt;Your Library&gt;</p>
     </div>
     <div class="page">
       <div>
@@ -16,15 +16,7 @@
           Remove Latest Meme
         </button>
       </div>
-      <div class="memes-wrapper">
-        <div class="meme" *ngFor="let meme of memes">
-          <div class="meme-wrap">
-            <img class="img-url" [src]="meme.url" />
-            <div class="top-text">{{ meme.topText }}</div>
-            <div class="bottom-text">{{ meme.bottomText }}</div>
-          </div>
-        </div>
-      </div>
+      <app-meme class="memes-section"></app-meme>
     </div>
   </div>
 </main>

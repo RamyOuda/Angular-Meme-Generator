@@ -1,0 +1,32 @@
+.meme-wrap {
+  border-radius: 10px;
+  height: 180px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-shadow: 10px 10px 8px #808080;
+}
+
+.img-url {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.top-text,
+.bottom-text {
+  color: #ffffff;
+  font-size: 25px;
+  position: absolute;
+}
+.top-text {
+  top: 5px;
+}
+
+.bottom-text {
+  bottom: 5px;
+}
