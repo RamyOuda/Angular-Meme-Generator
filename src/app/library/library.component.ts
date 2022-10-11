@@ -22,4 +22,8 @@ export class LibraryComponent implements OnInit {
   clearLocalStorage(): void {
     this.memeService.restoreToDefault();
   }
+
+  removeMeme(): void {
+    this.memeService.removeMeme();
+  }
 }

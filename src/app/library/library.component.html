@@ -15,9 +15,11 @@
       </div>
       <div class="memes-wrapper">
         <div class="meme" *ngFor="let meme of memes">
-          <img class="img-url" [src]="meme.url" />
-          <div class="top-text">{{ meme.topText }}</div>
-          <div class="bottom-text">{{ meme.bottomText }}</div>
+          <div class="meme-wrap" (click)="removeMeme()">
+            <img class="img-url" [src]="meme.url" />
+            <div class="top-text">{{ meme.topText }}</div>
+            <div class="bottom-text">{{ meme.bottomText }}</div>
+          </div>
         </div>
       </div>
     </div>
