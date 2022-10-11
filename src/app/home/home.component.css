@@ -9,28 +9,24 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   position: relative;
   left: -40px;
   transform: skewX(5deg);
-
   width: 50%;
-
   background-color: #001057;
 }
 
 .form-header {
   color: #ffffff;
+  bottom: 80px;
   transform: skewX(-5deg);
 }
 
 .input-wrapper {
   display: flex;
   justify-content: center;
-
   position: relative;
   bottom: 80px;
-
   transform: skewX(-5deg);
 }
 
@@ -39,7 +35,6 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-
   width: 75%;
 }
 
@@ -59,10 +54,8 @@
 .form-header,
 .meme-header {
   font-family: "Gemunu Libre", sans-serif;
-
   text-align: center;
   position: relative;
-  bottom: 80px;
 }
 
 h2 {
@@ -74,14 +67,15 @@ h2 {
 .meme-wrapper {
   display: flex;
   justify-content: center;
-
   flex-direction: column;
-
+  position: relative;
+  bottom: 50px;
   width: 50%;
 }
 
 .meme-header {
   color: #001057;
+  bottom: 40px;
 }
 
 .img-url {
@@ -96,14 +90,10 @@ h2 {
   margin: 20px;
   text-align: center;
   border-radius: 10px;
-
   display: flex;
   justify-content: center;
-
   position: relative;
-
   word-break: break-all;
-
   box-shadow: 10px 10px 8px #808080;
 }
 
