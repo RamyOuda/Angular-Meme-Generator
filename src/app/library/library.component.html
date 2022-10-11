@@ -1,18 +1,25 @@
 <main>
-  <div>
-    <button
-      class="btn btn-danger"
-      (click)="clearLocalStorage()"
-      routerLink="/home"
-    >
-      Clear All Memes
-    </button>
-  </div>
-  <div class="container">
-    <div class="meme" *ngFor="let meme of memes">
-      <img class="img-url" [src]="meme.url" />
-      <div class="top-text">{{ meme.topText }}</div>
-      <div class="bottom-text">{{ meme.bottomText }}</div>
+  <div class="wrapper">
+    <div class="side-bar">
+      <p class="WIP">&lt;Work In Progress&gt;</p>
+    </div>
+    <div class="page">
+      <div>
+        <button
+          class="btn btn-danger"
+          (click)="clearLocalStorage()"
+          routerLink="/home"
+        >
+          Clear All Memes
+        </button>
+      </div>
+      <div class="memes-wrapper">
+        <div class="meme" *ngFor="let meme of memes">
+          <img class="img-url" [src]="meme.url" />
+          <div class="top-text">{{ meme.topText }}</div>
+          <div class="bottom-text">{{ meme.bottomText }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </main>
