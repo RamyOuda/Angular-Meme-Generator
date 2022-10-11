@@ -57,6 +57,10 @@
   box-shadow: 10px 10px 8px #808080;
 }
 
+.meme-wrap:hover {
+  cursor: pointer;
+}
+
 .img-url {
   width: 100%;
   height: 100%;

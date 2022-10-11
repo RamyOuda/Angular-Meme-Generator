@@ -1,4 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalService } from '../local.service';
 import { IMeme } from './imeme';
 
@@ -6,7 +7,7 @@ import { IMeme } from './imeme';
   providedIn: 'root',
 })
 export class MemeService {
-  constructor(private localStore: LocalService) {}
+  constructor(private router: Router, private localStore: LocalService) {}
 
   memeList = this.localStore.getData('memes');
   memes!: IMeme[];
@@ -19,7 +20,7 @@ export class MemeService {
   };
 
   startWithDefaultData(): void {
-    if (this.memeList === null) {
+    if (this.memeList === null || this.memeList.length === 0) {
       this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
       this.memeList = this.localStore.getData('memes');
     }
@@ -41,10 +42,13 @@ export class MemeService {
     this.memesFromLocal = this.memeList;
     this.memes = JSON.parse(this.memesFromLocal);
 
-    let index = 0;
-
-    this.memes.splice(index, 1);
-
-    this.localStore.saveData('memes', JSON.stringify(this.memes));
+    if (this.memes.length > 1) {
+      this.memes.shift();
+      this.localStore.saveData('memes', JSON.stringify(this.memes));
+      location.reload();
+    } else {
+      this.restoreToDefault();
+      this.router.navigate(['/home']);
+    }
   }
 }
