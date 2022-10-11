@@ -15,12 +15,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.memeService.startWithDefaultData();
+    this.memeService.getMemes();
+    this.memesFromLocal = this.memeService.memeList;
     this.memes = JSON.parse(this.memesFromLocal);
   }
 
+  memesFromLocal: any;
   memes!: IMeme[];
-  memesFromLocal: any = this.memeService.memeList;
   showAlert: boolean = false;
+  submitted: boolean = false;
 
   private _url: string = '';
   get url(): string {
@@ -67,5 +70,6 @@ export class HomeComponent implements OnInit {
     this.url = '';
     this.topText = '';
     this.bottomText = '';
+    this.submitted = true;
   }
 }

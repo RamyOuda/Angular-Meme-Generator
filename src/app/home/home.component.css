@@ -112,6 +112,12 @@ h2 {
   bottom: 10px;
 }
 
+.submit-notif {
+  font-family: "Gemunu Libre", sans-serif;
+  color: #001057;
+  font-size: 20px;
+}
+
 .latest-meme {
   display: flex;
   justify-content: center;

@@ -11,10 +11,12 @@ export class LibraryComponent implements OnInit {
   constructor(private memeService: MemeService) {}
 
   ngOnInit(): void {
+    this.memeService.getMemes();
+    this.memesFromLocal = this.memeService.memeList;
     this.memes = JSON.parse(this.memesFromLocal);
   }
 
-  memesFromLocal: any = this.memeService.memeList;
+  memesFromLocal: any;
   memes!: IMeme[];
 
   clearLocalStorage(): void {

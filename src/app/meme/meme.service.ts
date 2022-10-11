@@ -17,12 +17,19 @@ export class MemeService {
   };
 
   startWithDefaultData(): void {
-    if (this.localStore.getData('memes') === null) {
+    if (this.memeList === null) {
       this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
+      this.memeList = this.localStore.getData('memes');
     }
+  }
+
+  getMemes(): void {
+    this.memeList = this.localStore.getData('memes');
   }
 
   restoreToDefault(): void {
     this.localStore.removeData('memes');
+    this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
+    this.memeList = this.localStore.getData('memes');
   }
 }
