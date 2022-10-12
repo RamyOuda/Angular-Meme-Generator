@@ -57,9 +57,8 @@ export class HomeComponent implements OnInit {
         topText: this.topText,
         bottomText: this.bottomText,
       });
-
       this.localStore.saveData('memes', JSON.stringify(this.memes));
-
+      this.submitted = true;
       this.clearInputs();
     } else {
       this.showAlert = true;
@@ -70,6 +69,5 @@ export class HomeComponent implements OnInit {
     this.url = '';
     this.topText = '';
     this.bottomText = '';
-    this.submitted = true;
   }
 }

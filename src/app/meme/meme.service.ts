@@ -22,7 +22,7 @@ export class MemeService {
   startWithDefaultData(): void {
     if (this.memeList === null || this.memeList.length === 0) {
       this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
-      this.memeList = this.localStore.getData('memes');
+      this.getMemes();
     }
   }
 
@@ -33,7 +33,7 @@ export class MemeService {
   restoreToDefault(): void {
     this.localStore.removeData('memes');
     this.localStore.saveData('memes', JSON.stringify([this.defaultMeme]));
-    this.memeList = this.localStore.getData('memes');
+    this.getMemes();
   }
 
   removeMeme(): void {
