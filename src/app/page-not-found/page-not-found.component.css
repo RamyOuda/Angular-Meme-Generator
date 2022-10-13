@@ -1,5 +1,16 @@
 main {
   display: flex;
+  justify-content: space-between;
+}
+
+.side-bar {
+  width: 200px;
+  background-color: #001057;
+  box-shadow: 5px 0 8px #808080, -5px 0 8px #808080;
+}
+
+.img-wrap {
+  display: flex;
   justify-content: center;
 }
 
