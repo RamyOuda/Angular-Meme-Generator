@@ -141,10 +141,11 @@ h2 {
   border-radius: 20px;
   padding: 10px 20px;
   text-decoration: none;
-  position: absolute;
-  top: 200px;
-  left: 580px;
   transition: ease 500ms;
+
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
 }
 
 .secret:hover {
