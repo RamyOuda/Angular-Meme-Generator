@@ -52,7 +52,8 @@
 }
 
 .form-header,
-.meme-header {
+.meme-header,
+.meme-footer {
   font-family: "Gemunu Libre", sans-serif;
   text-align: center;
   position: relative;
@@ -69,13 +70,19 @@ h2 {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  bottom: 50px;
+  bottom: 35px;
   width: 50%;
 }
 
 .meme-header {
   color: #001057;
   bottom: 40px;
+}
+
+.meme-footer p {
+  color: #001057;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .img-url {

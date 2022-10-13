@@ -7,7 +7,7 @@
       <div class="meme-input">
         <div class="form-group">
           <label [ngClass]="{ danger: showAlert }">{{
-            showAlert ? "Please enter an image URL" : "Image URL"
+            showAlert ? "Please enter an image URL" : "Image URL (Required)"
           }}</label>
           <input
             type="url"
@@ -63,5 +63,8 @@
       </div>
     </div>
     <!--  -->
+    <div class="meme-footer">
+      <p>&lt; Updates live! /&gt;</p>
+    </div>
   </div>
 </div>
