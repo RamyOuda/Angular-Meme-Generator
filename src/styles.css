@@ -15,13 +15,13 @@
   color: #ffffff;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .whoops {
     display: none;
   }
 }
 
-@media screen and (max-width: 1001px) {
+@media screen and (max-width: 601px) {
   app-root {
     display: none;
   }
