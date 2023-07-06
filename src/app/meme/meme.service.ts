@@ -9,9 +9,9 @@ import { IMeme } from './imeme';
 export class MemeService {
   constructor(private router: Router, private localStore: LocalService) {}
 
-  memeList = this.localStore.getData('memes');
+  memeList: string | null = this.localStore.getData('memes');
   memes!: IMeme[];
-  memesFromLocal: any;
+  memesFromLocal!: string | null;
 
   defaultMeme: IMeme = {
     url: 'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
@@ -40,7 +40,10 @@ export class MemeService {
     this.getMemes();
 
     this.memesFromLocal = this.memeList;
-    this.memes = JSON.parse(this.memesFromLocal);
+
+    if (this.memesFromLocal) {
+      this.memes = JSON.parse(this.memesFromLocal);
+    }
 
     if (this.memes.length > 1) {
       this.memes.shift();

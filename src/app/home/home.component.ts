@@ -17,10 +17,13 @@ export class HomeComponent implements OnInit {
     this.memeService.startWithDefaultData();
     this.memeService.getMemes();
     this.memesFromLocal = this.memeService.memeList;
-    this.memes = JSON.parse(this.memesFromLocal);
+
+    if (this.memesFromLocal) {
+      this.memes = JSON.parse(this.memesFromLocal);
+    }
   }
 
-  memesFromLocal: any;
+  memesFromLocal!: string | null;
   memes!: IMeme[];
   showAlert: boolean = false;
   submitted: boolean = false;
