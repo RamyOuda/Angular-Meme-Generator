@@ -48,20 +48,11 @@
     <div class="meme-header">
       <h2>{{ url ? "Your Meme!" : "Latest Meme!" }}</h2>
     </div>
-    <!-- If there is no input URL, show the most recent meme -->
-    <div class="latest-meme" *ngIf="!url">
+    <div class="latest-meme">
       <div class="meme">
-        <img class="img-url" [src]="memes[0].url" />
-        <div class="top-text">{{ memes[0].topText }}</div>
-        <div class="bottom-text">{{ memes[0].bottomText }}</div>
-      </div>
-    </div>
-    <!-- If there is an input URL, show the current meme -->
-    <div class="latest-meme" *ngIf="url">
-      <div class="meme">
-        <img class="img-url" [src]="url" />
-        <div class="top-text">{{ topText }}</div>
-        <div class="bottom-text">{{ bottomText }}</div>
+        <img class="img-url" [src]="url || memes[0].url" />
+        <div class="top-text">{{ topText || memes[0].topText }}</div>
+        <div class="bottom-text">{{ bottomText || memes[0].bottomText }}</div>
       </div>
     </div>
 

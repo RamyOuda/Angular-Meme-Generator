@@ -8,6 +8,10 @@ import { MemeService } from '../meme/meme.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  url = '';
+  topText = '';
+  bottomText = '';
+
   constructor(
     private localStore: LocalService,
     private memeService: MemeService
@@ -27,30 +31,6 @@ export class HomeComponent implements OnInit {
   memes!: IMeme[];
   showAlert: boolean = false;
   submitted: boolean = false;
-
-  private _url: string = '';
-  get url(): string {
-    return this._url;
-  }
-  set url(value: string) {
-    this._url = value;
-  }
-
-  private _topText: string = '';
-  get topText(): string {
-    return this._topText;
-  }
-  set topText(value: string) {
-    this._topText = value;
-  }
-
-  private _bottomText: string = '';
-  get bottomText(): string {
-    return this._bottomText;
-  }
-  set bottomText(value: string) {
-    this._bottomText = value;
-  }
 
   addNewMeme(): void {
     if (this.url) {
